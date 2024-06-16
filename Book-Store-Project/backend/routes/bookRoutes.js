@@ -1,4 +1,4 @@
-import express from express;
+import express from "express";
 import Book from "../models/bookModel.js"
 
 const router = express.Router();
@@ -53,7 +53,9 @@ const router = express.Router();
           const { id } = req.params;
         const book = await Book.findById(id);
     
+        // return res.status(201).json({message:" Single Book Fetch Successfully !!!", book });
         return res.status(201).json(book);
+
       //   return res.status(201).json( {
       //     message: " Book Fetch Successfully !!!",
       //     data: book
