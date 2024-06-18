@@ -21,9 +21,9 @@ Before you start, make sure you have Node.js and Yarn installed on your system. 
 - [React-Vite](https://vitejs.dev/guide/)
 - [Tailwind](https://tailwindcss.com/docs/installation)
 
-- [Notistack]: Display notifications with call of a function.
-    Check out the([Docs](https://notistack.com/getting-started)) and 
-    api ([Api-Reference](https://notistack.com/api-reference))
+- [Notistack](https://notistack.com/getting-started) : Display notifications with call of a function.
+    Check out the ([Docs](https://notistack.com/getting-started)) and 
+     ([Api-Reference](https://notistack.com/api-reference))
 
 
 ## Installation
