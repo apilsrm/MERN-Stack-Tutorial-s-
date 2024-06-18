@@ -3,6 +3,7 @@ import BackButton from "../components/BackButton"
 import Spinner from "../components/Spinner"
 import axios from "axios"
 import { useNavigate, useParams } from "react-router-dom"
+import { useSnackbar } from "notistack"
 
 
 const EditBook = () => {
@@ -11,8 +12,8 @@ const EditBook = () => {
   const [publishYear, setPublishYear] = useState("");
   const [loading, setLoading] = useState(false);
 
-
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar()
 
   //fetch id with data from backend at firstthen change  book data
   const {id} = useParams();
@@ -42,11 +43,14 @@ const EditBook = () => {
       .put(`http://localhost:4000/books/${id}`, data)
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Book Edited Successfully", { variant: "success" });
         navigate("/");
       })
       .catch((err) => {
         setLoading(false);
-        alert("An error happend . Please Check console");
+        // alert("An error happend . Please Check console");
+        enqueueSnackbar("An error happend", { variant: "error" });
+
         console.log(err);
       })
   }
